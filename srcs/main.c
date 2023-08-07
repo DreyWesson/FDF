@@ -6,7 +6,7 @@
 /*   By: conyejib <conyejib@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 11:47:59 by conyejib          #+#    #+#             */
-/*   Updated: 2023/08/06 02:50:39 by conyejib         ###   ########.fr       */
+/*   Updated: 2023/08/07 15:35:13 by conyejib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	main(int argc, char **argv)
 	t_fdf	*fdf;
 
 	if (argc != 2)
-		error(1);
-	file_name = argv[1];
-	fdf = init_fdf(file_name);
+		error(1); ///all program error handled error(1) flags an input error
+	file_name = argv[1]; // saving arguement to filename
+	fdf = init_fdf(file_name); //
 	render(fdf);
 	mlx_key_hook(fdf->win, &key_handle, fdf);
 	mlx_expose_hook(fdf->win, &expose_handle, fdf);
