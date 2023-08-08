@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 11:47:59 by conyejib          #+#    #+#             */
-/*   Updated: 2023/08/08 12:59:15 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/08/08 12:59:59 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	expose_handle(t_fdf *fdf);
 int	main(int argc, char **argv)
 {
 	char	*file_name;
-	t_fdf	**fdf;
+	t_fdf	*****fdf;
 
 	if (argc != 2)
 		error(1); ///all program error handled error(1) flags an input error
