@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: conyejib <conyejib@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 11:37:42 by conyejib          #+#    #+#             */
-/*   Updated: 2023/08/07 15:36:07 by conyejib         ###   ########.fr       */
+/*   Updated: 2023/08/08 13:06:36 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,8 @@ enum e_bool
 
 t_map	*read_map(char *file_name);
 void	error(int exit_code);
-t_fdf	*init_fdf(char *file_name);
+t_fdf	*init_fdf(char *file_name, t_fdf ** fdf);
+// t_fdf	*init_fdf(char *file_name);
 t_map	*init_map(void);
 t_image	*init_image(void *mlx);
 t_line	*init_line(t_point start, t_point end, t_fdf *fdf);

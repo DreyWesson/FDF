@@ -3,39 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: conyejib <conyejib@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 11:47:30 by conyejib          #+#    #+#             */
-/*   Updated: 2023/08/07 15:36:52 by conyejib         ###   ########.fr       */
+/*   Updated: 2023/08/08 13:07:53 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fdf.h"
 
-t_fdf	*init_fdf(char *file_name)
+t_fdf	*init_fdf(char *file_name, t_fdf ** fdf)
 {
-	t_fdf	*fdf;
+	// t_fdf	*fdf;
 
-	fdf = malloc(sizeof(t_fdf));
+	*fdf = malloc(sizeof(t_fdf));
 	if (!fdf)
 		error(3);
-	fdf->map = read_map(file_name);
-	if (!fdf->map)
+	(*fdf)->map = read_map(file_name);
+	if (!(*fdf)->map)
 	{
-		free(fdf);
+		free(*fdf);
 		error(4);
 	}
-	fdf->mlx = mlx_init();
-	fdf->win_x = WINDOW_WIDTH;
-	fdf->win_y = WINDOW_HEIGHT;
-	fdf->win = mlx_new_window(fdf->mlx, fdf->win_x, fdf->win_y, WINDOW_NAME);
-	fdf->image = init_image(fdf->mlx);
-	if (!fdf->image)
-		close_map(fdf, 5);
-	fdf->cam = init_cam(fdf->map);
-	if (!fdf->cam)
-		close_all(fdf, 6);
-	return (fdf);
+	(*fdf)->mlx = mlx_init();
+	(*fdf)->win_x = WINDOW_WIDTH;
+	(*fdf)->win_y = WINDOW_HEIGHT;
+	(*fdf)->win = mlx_new_window((*fdf)->mlx, (*fdf)->win_x, (*fdf)->win_y, WINDOW_NAME);
+	(*fdf)->image = init_image((*fdf)->mlx);
+	if (!(*fdf)->image)
+		close_map((*fdf), 5);
+	(*fdf)->cam = init_cam((*fdf)->map);
+	if (!(*fdf)->cam)
+		close_all(*fdf, 6);
+	return (*fdf);
 }
 
 t_map	*init_map(void)
